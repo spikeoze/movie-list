@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "./context";
-import {  AiOutlineClose  } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 function InfoBox() {
   const { info, showInfoBox, closeBox } = useGlobalContext();
 
@@ -11,11 +11,10 @@ function InfoBox() {
     <div className={`${showInfoBox ? "info-wrapper show" : "info-wrapper"}`}>
       <div className="info-box">
         <button className="close-btn" onClick={closeBox}>
-          < AiOutlineClose  />
+          <AiOutlineClose />
         </button>
 
         <div className="card-content">
-
           <div className="info-img">
             <img src={image} alt={name} />
           </div>
@@ -26,10 +25,10 @@ function InfoBox() {
             </div>
             <h4>{genre}</h4>
             <h4>{year}</h4>
-            <p className="desc">{description}</p>
+            <div className="desc scroll">
+              <p>{description}</p>
+            </div>
           </div>
-
-
         </div>
       </div>
     </div>
