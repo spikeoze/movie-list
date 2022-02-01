@@ -9,10 +9,12 @@ function InfoBox() {
 
   return (
     <div className={`${showInfoBox ? "info-wrapper show" : "info-wrapper"}`}>
-      <div className="info-box">
-        <button className="close-btn" onClick={closeBox}>
-          <AiOutlineClose />
-        </button>
+      <div className="info-box scroll">
+        <div>
+          <button className="close-btn" onClick={closeBox}>
+            <AiOutlineClose />
+          </button>
+        </div>
 
         <div className="card-content">
           <div className="info-img">

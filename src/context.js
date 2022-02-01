@@ -3,13 +3,17 @@ import data from "./data";
 const AppContext = React.createContext();
 
 const allGenres = ["all", ...new Set(data.map((movie) => movie.genre))];
-console.log(allGenres);
+// console.log(allGenres);
 
 export const AppProvider = ({ children }) => {
   const [movies, setMovies] = useState(data);
   const [showInfoBox, setshowInfoBox] = useState(false);
   const [info, setInfo] = useState({});
   const [genres, setGenres] = useState(allGenres);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [moviePerPage, setMoviePerPage] = useState(8);
+
 
   const genreFilter = (genre) => {
     if (genre === "all") {
@@ -42,6 +46,9 @@ export const AppProvider = ({ children }) => {
         info,
         genres,
         genreFilter,
+        currentPage,
+        setCurrentPage,
+        moviePerPage
       }}
     >
       {children}

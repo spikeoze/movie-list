@@ -75,6 +75,36 @@ p {
   color: var(--text-grey-color);
 }
 
+@media screen and (max-width: 800px) {
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 0.875rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+    color: var(--text-grey-color);
+  }
+}
+
 .btn {
   text-transform: uppercase;
   background: transparent;
@@ -100,6 +130,12 @@ p {
   width: 90vw;
   margin: 0 auto;
   max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
 }
 
 /** Movie_list Styles*/
@@ -170,6 +206,26 @@ option {
   color: var(--text-light-color);
 }
 
+@media screen and (max-width: 1024px) {
+  .movieList {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 3rem;
+    margin-left: 4rem;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .movieList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+    margin-left: 2rem;
+  }
+  .movieCard img {
+    width: 115px;
+    height: 157px;
+  }
+}
+
 /** Info Box  */
 
 .info-wrapper {
@@ -193,13 +249,13 @@ option {
 }
 
 .close-btn {
+  position: relative;
+  left: 93%;
+  top: 1.5rem;
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
-  position: absolute;
   color: var(--text-grey-color2);
-  top: 7rem;
-  right: 14rem;
   cursor: pointer;
   opacity: 1;
   transform: scale(0.7);
@@ -224,14 +280,10 @@ option {
   align-items: center;
   justify-content: center;
   place-items: center;
-  margin-top: 1.5rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .info-img img {
-  position: fixed;
-  left: 15rem;
-  bottom: 10rem;
   width: 210px;
   height: 315px;
   border: 5px solid var(--text-light-color);
@@ -242,13 +294,88 @@ option {
 .desc {
   display: flex;
   flex-direction: column;
-  max-height: 210px;
+  max-height: 220px;
   overflow: hidden;
   overflow-y: scroll;
 }
 
+@media screen and (max-width: 980px) {
+  .close-btn {
+    left: 90%;
+    top: 1rem;
+  }
+  
+  .info-box {
+    width: 480px;
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .close-btn {
+    left: 90%;
+    top: 1rem;
+    font-size: 2rem;
+
+  }
+  
+  .info-box {
+    width: 480px;
+    height: 800px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .close-btn {
+    left: 90%;
+    top: 1rem;
+    font-size: 2rem;
+
+  }
+  
+  .info-box {
+    width: 480px;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .info-box {
+    width: 350px;
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+
 .scroll::-webkit-scrollbar {
- 
   width: 10px;
 }
 
@@ -263,4 +390,29 @@ option {
 
 .scroll::-webkit-scrollbar-thumb:hover {
   background-color: var(--light-main-color2);
+}
+
+/** FOOTER  */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1f25;
+  width: 100%;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.logo {
+  transform: scale(1.5);
+  margin: auto 1rem;
+  border-radius: var(--radius);
+  background-color: var(--light-main-color3);
+  color: #1a1f25;
 }

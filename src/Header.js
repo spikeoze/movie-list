@@ -3,10 +3,10 @@ import Movies from "./data";
 import { useGlobalContext } from "./context";
 
 function Header() {
-  const { genres, genreFilter } = useGlobalContext();
+  const { genres, genreFilter, setCurrentPage } = useGlobalContext();
   const [selectedOption, setSelectedOption] = useState(genres[0].value);
 
-  console.log(selectedOption);
+  // console.log(selectedOption);
 
   return (
     <section className="section header ">
@@ -21,6 +21,7 @@ function Header() {
         <select name="genres" className="btn" value={selectedOption} onChange={e => {
             setSelectedOption(e.target.value) 
             genreFilter(e.target.value)
+            setCurrentPage(1)
             }}>
             {
                 genres.map((genre, index)=>{

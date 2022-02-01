@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 
 function MoviesList() {
-  const { movies, openBox } = useGlobalContext();
+  const { movies, openBox, currentPage, setCurrentPage, moviePerPage } = useGlobalContext();
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [moviePerPage, setMoviePerPage] = useState(8);
-
+  
 
   //? Sets current page to the target id which equals the button numbers
   const handlePage = (e)=>{
