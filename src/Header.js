@@ -11,7 +11,7 @@ function Header() {
   return (
     <section className="section header ">
       <div className="title">
-        <h1>Move-List</h1>
+        <h1>Movie-List</h1>
         <div className="underline"></div>
       </div>
 
